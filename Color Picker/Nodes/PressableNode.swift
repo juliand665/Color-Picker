@@ -26,7 +26,7 @@ class PressableNode: SKNode {
 	
 	override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
 		if isPressed {
-			print("pressed!")
+			nodePressed()
 		}
 		
 		isPressed = false

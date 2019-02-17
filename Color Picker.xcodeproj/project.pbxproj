@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9545FC7E2219A5690011BB0B /* Haptics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9545FC7D2219A5690011BB0B /* Haptics.swift */; };
 		95F8F9602218C9E000B1AE2C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F8F95F2218C9E000B1AE2C /* AppDelegate.swift */; };
 		95F8F9622218C9E000B1AE2C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F8F9612218C9E000B1AE2C /* ViewController.swift */; };
 		95F8F9652218C9E000B1AE2C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95F8F9632218C9E000B1AE2C /* Main.storyboard */; };
@@ -18,9 +19,11 @@
 		95F8F9862218ED6D00B1AE2C /* MiscHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F8F9832218ED6D00B1AE2C /* MiscHelpers.swift */; };
 		95F8F9892218EDCA00B1AE2C /* PressableNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F8F9882218EDC900B1AE2C /* PressableNode.swift */; };
 		95F8F98D2218EE3C00B1AE2C /* ColorButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F8F98C2218EE3C00B1AE2C /* ColorButton.swift */; };
+		95F8F98F2218F61100B1AE2C /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F8F98E2218F61100B1AE2C /* UserDefaults.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9545FC7D2219A5690011BB0B /* Haptics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Haptics.swift; sourceTree = "<group>"; };
 		95F8F95C2218C9E000B1AE2C /* Color Picker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Color Picker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		95F8F95F2218C9E000B1AE2C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		95F8F9612218C9E000B1AE2C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -34,6 +37,7 @@
 		95F8F9832218ED6D00B1AE2C /* MiscHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MiscHelpers.swift; sourceTree = "<group>"; };
 		95F8F9882218EDC900B1AE2C /* PressableNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PressableNode.swift; sourceTree = "<group>"; };
 		95F8F98C2218EE3C00B1AE2C /* ColorButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorButton.swift; sourceTree = "<group>"; };
+		95F8F98E2218F61100B1AE2C /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +71,7 @@
 			isa = PBXGroup;
 			children = (
 				95F8F9802218ED6D00B1AE2C /* Helpers */,
+				95F8F98E2218F61100B1AE2C /* UserDefaults.swift */,
 				95F8F95F2218C9E000B1AE2C /* AppDelegate.swift */,
 				95F8F9612218C9E000B1AE2C /* ViewController.swift */,
 				95F8F9712218CEDE00B1AE2C /* Scene.swift */,
@@ -84,6 +89,7 @@
 			children = (
 				95F8F9812218ED6D00B1AE2C /* Geometry.swift */,
 				95F8F9822218ED6D00B1AE2C /* UIColor.swift */,
+				9545FC7D2219A5690011BB0B /* Haptics.swift */,
 				95F8F9832218ED6D00B1AE2C /* MiscHelpers.swift */,
 			);
 			path = Helpers;
@@ -171,9 +177,11 @@
 			files = (
 				95F8F9622218C9E000B1AE2C /* ViewController.swift in Sources */,
 				95F8F9862218ED6D00B1AE2C /* MiscHelpers.swift in Sources */,
+				9545FC7E2219A5690011BB0B /* Haptics.swift in Sources */,
 				95F8F9842218ED6D00B1AE2C /* Geometry.swift in Sources */,
 				95F8F9602218C9E000B1AE2C /* AppDelegate.swift in Sources */,
 				95F8F9892218EDCA00B1AE2C /* PressableNode.swift in Sources */,
+				95F8F98F2218F61100B1AE2C /* UserDefaults.swift in Sources */,
 				95F8F9722218CEDE00B1AE2C /* Scene.swift in Sources */,
 				95F8F9852218ED6D00B1AE2C /* UIColor.swift in Sources */,
 				95F8F98D2218EE3C00B1AE2C /* ColorButton.swift in Sources */,
