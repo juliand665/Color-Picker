@@ -1,6 +1,6 @@
-// Created by Julian Dunskus
-
 import SpriteKit
+import UserDefault
+import CGeometry
 
 final class Scene: SKScene {
 	weak var sceneDelegate: SceneDelegate? {
@@ -13,31 +13,21 @@ final class Scene: SKScene {
 	var colorButtons: [ColorButton] = []
 	
 	var center: CGPoint {
-		return size.asPoint / 2
+		return CGPoint(size / 2)
 	}
 	
-	var score = defaults.score {
-		didSet {
-			defaults.score = score
-			sceneDelegate?.scoreChanged(to: score)
-		}
+	@UserDefault("score") var score = 0 {
+		didSet { sceneDelegate?.scoreChanged(to: score) }
 	}
 	
-	var highscore = defaults.highscore {
-		didSet {
-			defaults.highscore = highscore
-			sceneDelegate?.highscoreChanged(to: highscore)
-		}
+	@UserDefault("highscore") var highscore = 0 {
+		didSet { sceneDelegate?.highscoreChanged(to: highscore) }
 	}
 	
-	var hasLost = defaults.hasLost {
-		didSet {
-			defaults.hasLost = hasLost
-		}
-	}
+	@UserDefault("hasLost") var hasLost = false
 	
-	var mainColor: UIColor!
-	var wrongColor: UIColor!
+	@UserDefault("mainColor") var mainColor: UIColor!
+	@UserDefault("wrongColor") var wrongColor: UIColor!
 	
 	override init() {
 		super.init(size: CGSize(width: 1024, height: 1024))
@@ -45,7 +35,7 @@ final class Scene: SKScene {
 		let offsets = stride(from: -1.5, through: 1.5, by: 1)
 		colorButtons = offsets.flatMap { y in
 			offsets.map { x in
-				ColorButton(at: center + CGPoint(x: x, y: y) * 0.25 * size)
+				ColorButton(at: center + CGVector(dx: x, dy: y) * 0.25 * size)
 			}
 		}
 		colorButtons.forEach {
@@ -55,9 +45,7 @@ final class Scene: SKScene {
 		
 		backgroundColor = .clear
 		
-		if let mainColor = defaults.mainColor, let wrongColor = defaults.wrongColor {
-			self.mainColor = mainColor
-			self.wrongColor = wrongColor
+		if mainColor != nil, wrongColor != nil {
 			updateColors()
 		} else {
 			randomizeColors()
@@ -93,9 +81,6 @@ final class Scene: SKScene {
 			blue: randomize(mainColor.blue),
 			alpha: 1
 		)
-		
-		defaults.mainColor = mainColor
-		defaults.wrongColor = wrongColor
 		
 		updateColors()
 	}
@@ -156,11 +141,17 @@ final class Scene: SKScene {
 }
 
 extension Scene: ColorButtonDelegate {
+	func colorButtonPressStarted() {
+		Haptics.mediumImpact.prepare()
+		Haptics.notify.prepare()
+	}
+	
 	func colorButtonPressed(_ colorButton: ColorButton) {
 		guard !hasLost else {
 			restart()
 			return
 		}
+		
 		if colorButton.color == mainColor {
 			lose()
 		} else {
@@ -173,3 +164,5 @@ protocol SceneDelegate: AnyObject {
 	func scoreChanged(to score: Int)
 	func highscoreChanged(to score: Int)
 }
+
+extension UIColor: DefaultsValueConvertible {}

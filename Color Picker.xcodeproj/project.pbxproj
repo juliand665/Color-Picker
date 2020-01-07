@@ -3,23 +3,24 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		9545FC7E2219A5690011BB0B /* Haptics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9545FC7D2219A5690011BB0B /* Haptics.swift */; };
+		95BD738722F481720055DE4E /* UserDefault in Frameworks */ = {isa = PBXBuildFile; productRef = 95BD738622F481720055DE4E /* UserDefault */; };
 		95F8F9602218C9E000B1AE2C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F8F95F2218C9E000B1AE2C /* AppDelegate.swift */; };
 		95F8F9622218C9E000B1AE2C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F8F9612218C9E000B1AE2C /* ViewController.swift */; };
 		95F8F9652218C9E000B1AE2C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95F8F9632218C9E000B1AE2C /* Main.storyboard */; };
 		95F8F9672218C9E300B1AE2C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95F8F9662218C9E300B1AE2C /* Assets.xcassets */; };
 		95F8F96A2218C9E300B1AE2C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95F8F9682218C9E300B1AE2C /* LaunchScreen.storyboard */; };
 		95F8F9722218CEDE00B1AE2C /* Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F8F9712218CEDE00B1AE2C /* Scene.swift */; };
-		95F8F9842218ED6D00B1AE2C /* Geometry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F8F9812218ED6D00B1AE2C /* Geometry.swift */; };
 		95F8F9852218ED6D00B1AE2C /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F8F9822218ED6D00B1AE2C /* UIColor.swift */; };
 		95F8F9862218ED6D00B1AE2C /* MiscHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F8F9832218ED6D00B1AE2C /* MiscHelpers.swift */; };
 		95F8F9892218EDCA00B1AE2C /* PressableNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F8F9882218EDC900B1AE2C /* PressableNode.swift */; };
 		95F8F98D2218EE3C00B1AE2C /* ColorButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F8F98C2218EE3C00B1AE2C /* ColorButton.swift */; };
-		95F8F98F2218F61100B1AE2C /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F8F98E2218F61100B1AE2C /* UserDefaults.swift */; };
+		B9817FAE23C43CE000F8F05B /* CGeometry in Frameworks */ = {isa = PBXBuildFile; productRef = B9817FAD23C43CE000F8F05B /* CGeometry */; };
+		B9817FB123C43D0000F8F05B /* HandyOperators in Frameworks */ = {isa = PBXBuildFile; productRef = B9817FB023C43D0000F8F05B /* HandyOperators */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,12 +33,10 @@
 		95F8F9692218C9E300B1AE2C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		95F8F96B2218C9E300B1AE2C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		95F8F9712218CEDE00B1AE2C /* Scene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scene.swift; sourceTree = "<group>"; };
-		95F8F9812218ED6D00B1AE2C /* Geometry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Geometry.swift; sourceTree = "<group>"; };
 		95F8F9822218ED6D00B1AE2C /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		95F8F9832218ED6D00B1AE2C /* MiscHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MiscHelpers.swift; sourceTree = "<group>"; };
 		95F8F9882218EDC900B1AE2C /* PressableNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PressableNode.swift; sourceTree = "<group>"; };
 		95F8F98C2218EE3C00B1AE2C /* ColorButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorButton.swift; sourceTree = "<group>"; };
-		95F8F98E2218F61100B1AE2C /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +44,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B9817FB123C43D0000F8F05B /* HandyOperators in Frameworks */,
+				B9817FAE23C43CE000F8F05B /* CGeometry in Frameworks */,
+				95BD738722F481720055DE4E /* UserDefault in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,7 +73,6 @@
 			isa = PBXGroup;
 			children = (
 				95F8F9802218ED6D00B1AE2C /* Helpers */,
-				95F8F98E2218F61100B1AE2C /* UserDefaults.swift */,
 				95F8F95F2218C9E000B1AE2C /* AppDelegate.swift */,
 				95F8F9612218C9E000B1AE2C /* ViewController.swift */,
 				95F8F9712218CEDE00B1AE2C /* Scene.swift */,
@@ -87,7 +88,6 @@
 		95F8F9802218ED6D00B1AE2C /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				95F8F9812218ED6D00B1AE2C /* Geometry.swift */,
 				95F8F9822218ED6D00B1AE2C /* UIColor.swift */,
 				9545FC7D2219A5690011BB0B /* Haptics.swift */,
 				95F8F9832218ED6D00B1AE2C /* MiscHelpers.swift */,
@@ -120,6 +120,11 @@
 			dependencies = (
 			);
 			name = "Color Picker";
+			packageProductDependencies = (
+				95BD738622F481720055DE4E /* UserDefault */,
+				B9817FAD23C43CE000F8F05B /* CGeometry */,
+				B9817FB023C43D0000F8F05B /* HandyOperators */,
+			);
 			productName = "Color Picker";
 			productReference = 95F8F95C2218C9E000B1AE2C /* Color Picker.app */;
 			productType = "com.apple.product-type.application";
@@ -148,6 +153,11 @@
 				Base,
 			);
 			mainGroup = 95F8F9532218C9E000B1AE2C;
+			packageReferences = (
+				95BD738522F481720055DE4E /* XCRemoteSwiftPackageReference "UserDefault" */,
+				B9817FAC23C43CE000F8F05B /* XCRemoteSwiftPackageReference "CGeometry" */,
+				B9817FAF23C43D0000F8F05B /* XCRemoteSwiftPackageReference "HandyOperators" */,
+			);
 			productRefGroup = 95F8F95D2218C9E000B1AE2C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -178,10 +188,8 @@
 				95F8F9622218C9E000B1AE2C /* ViewController.swift in Sources */,
 				95F8F9862218ED6D00B1AE2C /* MiscHelpers.swift in Sources */,
 				9545FC7E2219A5690011BB0B /* Haptics.swift in Sources */,
-				95F8F9842218ED6D00B1AE2C /* Geometry.swift in Sources */,
 				95F8F9602218C9E000B1AE2C /* AppDelegate.swift in Sources */,
 				95F8F9892218EDCA00B1AE2C /* PressableNode.swift in Sources */,
-				95F8F98F2218F61100B1AE2C /* UserDefaults.swift in Sources */,
 				95F8F9722218CEDE00B1AE2C /* Scene.swift in Sources */,
 				95F8F9852218ED6D00B1AE2C /* UIColor.swift in Sources */,
 				95F8F98D2218EE3C00B1AE2C /* ColorButton.swift in Sources */,
@@ -331,6 +339,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 13;
 				DEVELOPMENT_TEAM = V2EPDFA9PV;
 				INFOPLIST_FILE = "Color Picker/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -338,9 +347,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 2.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.juliand665.Color-Picker";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -350,6 +360,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 13;
 				DEVELOPMENT_TEAM = V2EPDFA9PV;
 				INFOPLIST_FILE = "Color Picker/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -357,9 +368,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 2.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.juliand665.Color-Picker";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -386,6 +398,51 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		95BD738522F481720055DE4E /* XCRemoteSwiftPackageReference "UserDefault" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/juliand665/UserDefault.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+		B9817FAC23C43CE000F8F05B /* XCRemoteSwiftPackageReference "CGeometry" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/juliand665/CGeometry.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.3.0;
+			};
+		};
+		B9817FAF23C43D0000F8F05B /* XCRemoteSwiftPackageReference "HandyOperators" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/juliand665/HandyOperators.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		95BD738622F481720055DE4E /* UserDefault */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 95BD738522F481720055DE4E /* XCRemoteSwiftPackageReference "UserDefault" */;
+			productName = UserDefault;
+		};
+		B9817FAD23C43CE000F8F05B /* CGeometry */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B9817FAC23C43CE000F8F05B /* XCRemoteSwiftPackageReference "CGeometry" */;
+			productName = CGeometry;
+		};
+		B9817FB023C43D0000F8F05B /* HandyOperators */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B9817FAF23C43D0000F8F05B /* XCRemoteSwiftPackageReference "HandyOperators" */;
+			productName = HandyOperators;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 95F8F9542218C9E000B1AE2C /* Project object */;
 }

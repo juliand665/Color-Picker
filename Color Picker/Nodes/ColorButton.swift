@@ -1,13 +1,13 @@
-// Created by Julian Dunskus
-
 import SpriteKit
+import HandyOperators
+import CGeometry
 
 final class ColorButton: PressableNode {
 	static let size = CGSize(width: 208, height: 208)
 	
 	weak var delegate: ColorButtonDelegate?
 	
-	private let square = SKShapeNode(rect: CGRect(origin: -size.asPoint / 2, size: size), cornerRadius: 48) <- {
+	private let square = SKShapeNode(rect: CGRect(origin: -CGPoint(size / 2), size: size), cornerRadius: 48) <- {
 		$0.lineWidth = 12
 	}
 	
@@ -22,8 +22,11 @@ final class ColorButton: PressableNode {
 		didSet {
 			if isPressed != oldValue {
 				run(.scale(to: isPressed ? 0.85 : 1, duration: 0.05))
+				
 				if isPressed {
-					Haptics.mediumImpact.prepare()
+					delegate?.colorButtonPressStarted()
+				} else {
+					delegate?.colorButtonPressCancelled()
 				}
 			}
 		}
@@ -46,5 +49,12 @@ final class ColorButton: PressableNode {
 }
 
 protocol ColorButtonDelegate: AnyObject {
+	func colorButtonPressStarted()
+	func colorButtonPressCancelled()
 	func colorButtonPressed(_ colorButton: ColorButton)
+}
+
+extension ColorButtonDelegate {
+	func colorButtonPressStarted() {}
+	func colorButtonPressCancelled() {}
 }
