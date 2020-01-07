@@ -37,6 +37,7 @@
 		95F8F9832218ED6D00B1AE2C /* MiscHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MiscHelpers.swift; sourceTree = "<group>"; };
 		95F8F9882218EDC900B1AE2C /* PressableNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PressableNode.swift; sourceTree = "<group>"; };
 		95F8F98C2218EE3C00B1AE2C /* ColorButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorButton.swift; sourceTree = "<group>"; };
+		B9817FB223C44A1E00F8F05B /* Color Picker.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Color Picker.entitlements"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +73,7 @@
 		95F8F95E2218C9E000B1AE2C /* Color Picker */ = {
 			isa = PBXGroup;
 			children = (
+				B9817FB223C44A1E00F8F05B /* Color Picker.entitlements */,
 				95F8F9802218ED6D00B1AE2C /* Helpers */,
 				95F8F95F2218C9E000B1AE2C /* AppDelegate.swift */,
 				95F8F9612218C9E000B1AE2C /* ViewController.swift */,
@@ -338,8 +340,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Color Picker/Color Picker.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 14;
+				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_TEAM = V2EPDFA9PV;
 				INFOPLIST_FILE = "Color Picker/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -350,6 +354,7 @@
 				MARKETING_VERSION = 2.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.juliand665.Color-Picker";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -359,8 +364,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Color Picker/Color Picker.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 14;
+				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_TEAM = V2EPDFA9PV;
 				INFOPLIST_FILE = "Color Picker/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -371,6 +378,7 @@
 				MARKETING_VERSION = 2.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.juliand665.Color-Picker";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
