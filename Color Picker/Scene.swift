@@ -13,7 +13,7 @@ final class Scene: SKScene {
 	var colorButtons: [ColorButton] = []
 	
 	var center: CGPoint {
-		return CGPoint(size / 2)
+		CGPoint(size / 2)
 	}
 	
 	@UserDefault("score") var score = 0 {
