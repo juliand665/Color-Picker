@@ -4,8 +4,14 @@ import UIKit
 final class AppDelegate: UIResponder, UIApplicationDelegate {
 	var window: UIWindow?
 	
-	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-		// Override point for customization after application launch.
+	func application(
+		_ application: UIApplication,
+		didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
+	) -> Bool {
+		UIApplication.shared.connectedScenes
+			.compactMap { $0 as? UIWindowScene }
+			.forEach { $0.sizeRestrictions?.minimumSize = .zero }
+		
 		return true
 	}
 }
