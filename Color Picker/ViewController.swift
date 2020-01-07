@@ -1,14 +1,12 @@
-// Created by Julian Dunskus
-
 import SpriteKit
 
-class ViewController: UIViewController {
-	@IBOutlet var sceneView: SKView!
+final class ViewController: UIViewController {
+	@IBOutlet private var sceneView: SKView!
 	
-	@IBOutlet var scoreLabel: UILabel!
-	@IBOutlet var highscoreLabel: UILabel!
+	@IBOutlet private var scoreLabel: UILabel!
+	@IBOutlet private var highscoreLabel: UILabel!
 	
-	let scene = Scene()
+	private let scene = Scene()
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()

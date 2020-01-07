@@ -12,9 +12,7 @@ final class Scene: SKScene {
 	
 	var colorButtons: [ColorButton] = []
 	
-	var center: CGPoint {
-		CGPoint(size / 2)
-	}
+	var center: CGPoint { CGPoint(size / 2) }
 	
 	@UserDefault("score") var score = 0 {
 		didSet { sceneDelegate?.scoreChanged(to: score) }
@@ -96,8 +94,12 @@ final class Scene: SKScene {
 		
 		hasLost = true
 		colorButtons.forEach { button in
-			let isOddOneOut = button.color == wrongColor
-			button.run(.scale(to: isOddOneOut ? 1.1 : 0.9, duration: 0.1))
+			button.run(
+				.scale(
+					to: button.color == wrongColor ? 1.1 : 0.9,
+					duration: 0.1
+				)
+			)
 		}
 	}
 	
@@ -107,26 +109,30 @@ final class Scene: SKScene {
 		score = 0
 		hasLost = false
 		
-		let delay = 0.15
-		let rotate = SKAction.rotate(byAngle: -.pi, duration: delay)
-		let hide = SKAction.run { [colorButtons] in
-			colorButtons.forEach {
-				$0.run(.group([rotate, .scale(to: 0, duration: delay)]))
-			}
-		}
-		let show = SKAction.run { [colorButtons] in
-			colorButtons.forEach {
-				$0.run(.group([rotate, .scale(to: 1, duration: delay)]))
-			}
+		func scale(to scale: CGFloat) -> SKAction {
+			let duration = 0.15
+			return .group([
+				.run { [colorButtons] in
+					colorButtons.forEach {
+						$0.run(
+							.group([
+								.rotate(byAngle: -.pi, duration: duration),
+								.scale(to: scale, duration: duration),
+							])
+						)
+					}
+				},
+				.wait(forDuration: duration),
+			])
 		}
 		
-		let actions = [
-			hide,
-			.wait(forDuration: delay),
-			.run(randomizeColors),
-			show
-		]
-		run(.sequence(actions))
+		run(
+			.sequence([
+				scale(to: 0),
+				.run(randomizeColors),
+				scale(to: 1),
+			])
+		)
 	}
 	
 	func advance() {

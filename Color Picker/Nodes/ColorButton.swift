@@ -7,21 +7,31 @@ final class ColorButton: PressableNode {
 	
 	weak var delegate: ColorButtonDelegate?
 	
-	private let square = SKShapeNode(rect: CGRect(origin: -CGPoint(size / 2), size: size), cornerRadius: 48) <- {
+	private let square = (SKShapeNode(
+		rect: CGRect(origin: -CGPoint(size / 2), size: size),
+		cornerRadius: 48
+	)) <- {
 		$0.lineWidth = 12
 	}
 	
 	var color: SKColor = .clear {
 		didSet {
 			square.fillColor = color
-			square.strokeColor = color.withBrightness((color.brightness - 0.1).clamped(to: 0...1))
+			square.strokeColor = color.withBrightness(
+				(color.brightness - 0.1).clamped(to: 0...1)
+			)
 		}
 	}
 	
 	override var isPressed: Bool {
 		didSet {
 			if isPressed != oldValue {
-				run(.scale(to: isPressed ? 0.85 : 1, duration: 0.05))
+				run(
+					.scale(
+						to: isPressed ? 0.85 : 1,
+						duration: 0.05
+					)
+				)
 				
 				if isPressed {
 					delegate?.colorButtonPressStarted()

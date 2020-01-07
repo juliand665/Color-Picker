@@ -1,5 +1,3 @@
-// Created by Julian Dunskus
-
 import SpriteKit
 
 class PressableNode: SKNode {
